@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF13BE3C1A13538A00605B21 /* cli.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE3A1A13538A00605B21 /* cli.png */; };
+		AF13BE3D1A13538A00605B21 /* cli@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE3B1A13538A00605B21 /* cli@2x.png */; };
+		AF13BE401A13E1EC00605B21 /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE3E1A13E1EC00605B21 /* library.png */; };
+		AF13BE411A13E1EC00605B21 /* library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE3F1A13E1EC00605B21 /* library@2x.png */; };
+		AF13BE681A1439D300605B21 /* KeyboardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE671A1439D300605B21 /* KeyboardControl.swift */; };
+		AF13BE6A1A146E4F00605B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE691A146E4F00605B21 /* Main.storyboard */; };
+		AF13BE6C1A14829600605B21 /* UUIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE6B1A14829600605B21 /* UUIDs.swift */; };
+		AF13BE751A14A0A100605B21 /* ConsoleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */; };
+		AFA7EF131A1322DA006DEC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7EF121A1322DA006DEC91 /* AppDelegate.swift */; };
+		AFA7EF1A1A1322DA006DEC91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA7EF191A1322DA006DEC91 /* Images.xcassets */; };
+		AFA7EF1D1A1322DA006DEC91 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFA7EF1B1A1322DA006DEC91 /* LaunchScreen.xib */; };
+		AFA7EF291A1322DA006DEC91 /* PetPal_ConsoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7EF281A1322DA006DEC91 /* PetPal_ConsoleTests.swift */; };
+		AFA7EF331A1323B9006DEC91 /* BluetoothContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7EF321A1323B9006DEC91 /* BluetoothContext.swift */; };
+		AFA7EF351A132708006DEC91 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA7EF341A132708006DEC91 /* CoreBluetooth.framework */; };
+		AFA7EF371A132812006DEC91 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7EF361A132812006DEC91 /* Device.swift */; };
+		AFA7EF3B1A132C0A006DEC91 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7EF3A1A132C0A006DEC91 /* DeviceViewController.swift */; };
+		AFA7EF3F1A1347CB006DEC91 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA7EF3D1A1347CB006DEC91 /* settings.png */; };
+		AFA7EF401A1347CB006DEC91 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA7EF3E1A1347CB006DEC91 /* settings@2x.png */; };
+		AFA7EF421A13499C006DEC91 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7EF411A13499C006DEC91 /* ConsoleViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AFA7EF231A1322DA006DEC91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFA7EF051A1322DA006DEC91 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFA7EF0C1A1322DA006DEC91;
+			remoteInfo = "PetPal Console";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF13BE631A1437E700605B21 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AF13BE3A1A13538A00605B21 /* cli.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cli.png; sourceTree = "<group>"; };
+		AF13BE3B1A13538A00605B21 /* cli@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cli@2x.png"; sourceTree = "<group>"; };
+		AF13BE3E1A13E1EC00605B21 /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library.png; sourceTree = "<group>"; };
+		AF13BE3F1A13E1EC00605B21 /* library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "library@2x.png"; sourceTree = "<group>"; };
+		AF13BE671A1439D300605B21 /* KeyboardControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardControl.swift; sourceTree = "<group>"; };
+		AF13BE691A146E4F00605B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AF13BE6B1A14829600605B21 /* UUIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUIDs.swift; sourceTree = "<group>"; };
+		AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleLabel.swift; sourceTree = "<group>"; };
+		AFA7EF0D1A1322DA006DEC91 /* PetPal Console.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PetPal Console.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA7EF111A1322DA006DEC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFA7EF121A1322DA006DEC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AFA7EF191A1322DA006DEC91 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AFA7EF1C1A1322DA006DEC91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AFA7EF221A1322DA006DEC91 /* PetPal ConsoleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PetPal ConsoleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA7EF271A1322DA006DEC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFA7EF281A1322DA006DEC91 /* PetPal_ConsoleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPal_ConsoleTests.swift; sourceTree = "<group>"; };
+		AFA7EF321A1323B9006DEC91 /* BluetoothContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothContext.swift; sourceTree = "<group>"; };
+		AFA7EF341A132708006DEC91 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		AFA7EF361A132812006DEC91 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		AFA7EF3A1A132C0A006DEC91 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		AFA7EF3D1A1347CB006DEC91 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		AFA7EF3E1A1347CB006DEC91 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		AFA7EF411A13499C006DEC91 /* ConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFA7EF0A1A1322DA006DEC91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFA7EF351A132708006DEC91 /* CoreBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFA7EF1F1A1322DA006DEC91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AFA7EF041A1322DA006DEC91 = {
+			isa = PBXGroup;
+			children = (
+				AFA7EF341A132708006DEC91 /* CoreBluetooth.framework */,
+				AFA7EF0F1A1322DA006DEC91 /* PetPal Console */,
+				AFA7EF251A1322DA006DEC91 /* PetPal ConsoleTests */,
+				AFA7EF0E1A1322DA006DEC91 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AFA7EF0E1A1322DA006DEC91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFA7EF0D1A1322DA006DEC91 /* PetPal Console.app */,
+				AFA7EF221A1322DA006DEC91 /* PetPal ConsoleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFA7EF0F1A1322DA006DEC91 /* PetPal Console */ = {
+			isa = PBXGroup;
+			children = (
+				AF13BE691A146E4F00605B21 /* Main.storyboard */,
+				AFA7EF3C1A134776006DEC91 /* Images */,
+				AFA7EF121A1322DA006DEC91 /* AppDelegate.swift */,
+				AFA7EF3A1A132C0A006DEC91 /* DeviceViewController.swift */,
+				AFA7EF191A1322DA006DEC91 /* Images.xcassets */,
+				AFA7EF1B1A1322DA006DEC91 /* LaunchScreen.xib */,
+				AFA7EF101A1322DA006DEC91 /* Supporting Files */,
+				AFA7EF321A1323B9006DEC91 /* BluetoothContext.swift */,
+				AFA7EF361A132812006DEC91 /* Device.swift */,
+				AFA7EF411A13499C006DEC91 /* ConsoleViewController.swift */,
+				AF13BE671A1439D300605B21 /* KeyboardControl.swift */,
+				AF13BE6B1A14829600605B21 /* UUIDs.swift */,
+				AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */,
+			);
+			path = "PetPal Console";
+			sourceTree = "<group>";
+		};
+		AFA7EF101A1322DA006DEC91 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFA7EF111A1322DA006DEC91 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AFA7EF251A1322DA006DEC91 /* PetPal ConsoleTests */ = {
+			isa = PBXGroup;
+			children = (
+				AFA7EF281A1322DA006DEC91 /* PetPal_ConsoleTests.swift */,
+				AFA7EF261A1322DA006DEC91 /* Supporting Files */,
+			);
+			path = "PetPal ConsoleTests";
+			sourceTree = "<group>";
+		};
+		AFA7EF261A1322DA006DEC91 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFA7EF271A1322DA006DEC91 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AFA7EF3C1A134776006DEC91 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AF13BE3E1A13E1EC00605B21 /* library.png */,
+				AF13BE3F1A13E1EC00605B21 /* library@2x.png */,
+				AF13BE3A1A13538A00605B21 /* cli.png */,
+				AF13BE3B1A13538A00605B21 /* cli@2x.png */,
+				AFA7EF3D1A1347CB006DEC91 /* settings.png */,
+				AFA7EF3E1A1347CB006DEC91 /* settings@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFA7EF0C1A1322DA006DEC91 /* PetPal Console */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFA7EF2C1A1322DA006DEC91 /* Build configuration list for PBXNativeTarget "PetPal Console" */;
+			buildPhases = (
+				AFA7EF091A1322DA006DEC91 /* Sources */,
+				AFA7EF0A1A1322DA006DEC91 /* Frameworks */,
+				AFA7EF0B1A1322DA006DEC91 /* Resources */,
+				AF13BE631A1437E700605B21 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PetPal Console";
+			productName = "PetPal Console";
+			productReference = AFA7EF0D1A1322DA006DEC91 /* PetPal Console.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AFA7EF211A1322DA006DEC91 /* PetPal ConsoleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFA7EF2F1A1322DA006DEC91 /* Build configuration list for PBXNativeTarget "PetPal ConsoleTests" */;
+			buildPhases = (
+				AFA7EF1E1A1322DA006DEC91 /* Sources */,
+				AFA7EF1F1A1322DA006DEC91 /* Frameworks */,
+				AFA7EF201A1322DA006DEC91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFA7EF241A1322DA006DEC91 /* PBXTargetDependency */,
+			);
+			name = "PetPal ConsoleTests";
+			productName = "PetPal ConsoleTests";
+			productReference = AFA7EF221A1322DA006DEC91 /* PetPal ConsoleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AFA7EF051A1322DA006DEC91 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Haavar Valeur";
+				TargetAttributes = {
+					AFA7EF0C1A1322DA006DEC91 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					AFA7EF211A1322DA006DEC91 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = AFA7EF0C1A1322DA006DEC91;
+					};
+				};
+			};
+			buildConfigurationList = AFA7EF081A1322DA006DEC91 /* Build configuration list for PBXProject "PetPal Console" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AFA7EF041A1322DA006DEC91;
+			productRefGroup = AFA7EF0E1A1322DA006DEC91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFA7EF0C1A1322DA006DEC91 /* PetPal Console */,
+				AFA7EF211A1322DA006DEC91 /* PetPal ConsoleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFA7EF0B1A1322DA006DEC91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF13BE3C1A13538A00605B21 /* cli.png in Resources */,
+				AFA7EF401A1347CB006DEC91 /* settings@2x.png in Resources */,
+				AFA7EF3F1A1347CB006DEC91 /* settings.png in Resources */,
+				AF13BE401A13E1EC00605B21 /* library.png in Resources */,
+				AFA7EF1D1A1322DA006DEC91 /* LaunchScreen.xib in Resources */,
+				AF13BE3D1A13538A00605B21 /* cli@2x.png in Resources */,
+				AF13BE6A1A146E4F00605B21 /* Main.storyboard in Resources */,
+				AFA7EF1A1A1322DA006DEC91 /* Images.xcassets in Resources */,
+				AF13BE411A13E1EC00605B21 /* library@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFA7EF201A1322DA006DEC91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFA7EF091A1322DA006DEC91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFA7EF331A1323B9006DEC91 /* BluetoothContext.swift in Sources */,
+				AFA7EF3B1A132C0A006DEC91 /* DeviceViewController.swift in Sources */,
+				AF13BE751A14A0A100605B21 /* ConsoleLabel.swift in Sources */,
+				AF13BE6C1A14829600605B21 /* UUIDs.swift in Sources */,
+				AFA7EF131A1322DA006DEC91 /* AppDelegate.swift in Sources */,
+				AFA7EF421A13499C006DEC91 /* ConsoleViewController.swift in Sources */,
+				AF13BE681A1439D300605B21 /* KeyboardControl.swift in Sources */,
+				AFA7EF371A132812006DEC91 /* Device.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFA7EF1E1A1322DA006DEC91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFA7EF291A1322DA006DEC91 /* PetPal_ConsoleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AFA7EF241A1322DA006DEC91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFA7EF0C1A1322DA006DEC91 /* PetPal Console */;
+			targetProxy = AFA7EF231A1322DA006DEC91 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AFA7EF1B1A1322DA006DEC91 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFA7EF1C1A1322DA006DEC91 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AFA7EF2A1A1322DA006DEC91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AFA7EF2B1A1322DA006DEC91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AFA7EF2D1A1322DA006DEC91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "PetPal Console/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AFA7EF2E1A1322DA006DEC91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "PetPal Console/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		AFA7EF301A1322DA006DEC91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PetPal ConsoleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetPal Console.app/PetPal Console";
+			};
+			name = Debug;
+		};
+		AFA7EF311A1322DA006DEC91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PetPal ConsoleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetPal Console.app/PetPal Console";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFA7EF081A1322DA006DEC91 /* Build configuration list for PBXProject "PetPal Console" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFA7EF2A1A1322DA006DEC91 /* Debug */,
+				AFA7EF2B1A1322DA006DEC91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFA7EF2C1A1322DA006DEC91 /* Build configuration list for PBXNativeTarget "PetPal Console" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFA7EF2D1A1322DA006DEC91 /* Debug */,
+				AFA7EF2E1A1322DA006DEC91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFA7EF2F1A1322DA006DEC91 /* Build configuration list for PBXNativeTarget "PetPal ConsoleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFA7EF301A1322DA006DEC91 /* Debug */,
+				AFA7EF311A1322DA006DEC91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AFA7EF051A1322DA006DEC91 /* Project object */;
+}
