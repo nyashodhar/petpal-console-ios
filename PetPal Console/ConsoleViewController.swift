@@ -16,7 +16,7 @@ class ConsoleViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var mainScrollView: UIScrollView!
     var keyboardControl: KeyboardControl!
     var gestureRecognizer: UITapGestureRecognizer!
-    
+    var outputCharacteristic: CBCharacteristic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,9 @@ class ConsoleViewController: UIViewController, UITextFieldDelegate {
 
                             }
                         })
+                    } else if (characteristic.UUID == UUIDs.outputCharacteristic) {
+                        println("got outputCharacteristic")
+                        self.outputCharacteristic = characteristic
                     }
                 }
             })
@@ -88,11 +91,11 @@ class ConsoleViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate m
-        if (connectedDevice != nil && connectedDevice?.connected == true) {
+        if (connectedDevice != nil && connectedDevice?.connected == true && outputCharacteristic != nil) {
             var text = inputTextField.text
             inputTextField.text = ""
             consoleLabel.addText(text + "\n")
-            //  connectedDevice?.write(<#data: NSData#>, forCharacteristic: <#CBCharacteristic#>, type: <#CBCharacteristicWriteType#>)
+            connectedDevice?.write((text + "\n").dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)!, forCharacteristic: outputCharacteristic!, type: .WithResponse)
         } else {
             var alert = UIAlertController(title: "", message: "No connected device", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
