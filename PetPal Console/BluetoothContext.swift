@@ -120,20 +120,7 @@ class BluetoothContext: NSObject, CBCentralManagerDelegate {
         // Discover other characteristics
     }
     
-    func peripheral(peripheral: CBPeripheral!, didDiscoverCharacteristicsForService service: CBService!, error: NSError!) {
-        if (error != nil) {
-            println("error discoverCharacteristicsForService services (maybe...)");
-            //   [self cleanup];
-            return;
-        }
-        for characteristic in service.characteristics {
-            // if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]]) {
-            //     [peripheral writeValue:<#(NSData *)#> forCharacteristic:<#(CBCharacteristic *)#> type:<#(CBCharacteristicWriteType)#>]
-            ///     [peripheral setNotifyValue:YES forCharacteristic:characteristic];
-            // }
-            println("characteristic uuid=\(characteristic.UUID)")
-        }
-    }*/
+   */
     
     
     

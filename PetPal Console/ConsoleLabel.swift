@@ -29,11 +29,11 @@ class ConsoleLabel: UILabel {
         
     }
     
-    func addTextLine(text: String) {
+    func addText(text: String) {
         if (self.text == nil) {
             self.text = text
         } else {
-            self.text = self.text! + "\n" + text
+            self.text = self.text! + text
         }
     }
 }

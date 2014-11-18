@@ -36,19 +36,26 @@ class DeviceViewController: UIViewController, UITableViewDelegate, UITableViewDa
         device.connect({(error: NSError?) in
             if (error == nil) {
                 println("did connect!!!")
+                connectedDevice = device
            //    self.tabBarController?.selectedViewController = self.tabBarController?.viewControllers[1]
-               
+               /*
                 device.getServices({(services: [CBService]) in
                     
-                    
+                    var foundCommService = false
                     for service in services {
                        println("found service \(service.UUID.UUIDString)")
+                        if (service.UUID.UUIDString == UUIDs.commsService) {
+                            foundCommService = true
+                            connectedDevice = device
+                        }
                     }
-                    self.tabBarController?.selectedIndex = 1
+                    if (foundCommService) {
+                        self.tabBarController?.selectedIndex = 1
+                    }
 
-                })
+                })*/
                 
-                // self.performSegueWithIdentifier("show_console", sender: self)
+                 self.performSegueWithIdentifier("show_console", sender: self)
             } else {
                 println("failed to connect!")
             }

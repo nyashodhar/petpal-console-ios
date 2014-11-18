@@ -9,6 +9,7 @@
 import UIKit
 
 let bluetoohContext = BluetoothContext()
+var connectedDevice: Device?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
