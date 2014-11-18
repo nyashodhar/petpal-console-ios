@@ -9,7 +9,7 @@
 import UIKit
 
 let bluetoohContext = BluetoothContext()
-var connectedDevice: Device?
+var connectedDevice: BlueBasicDevice?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

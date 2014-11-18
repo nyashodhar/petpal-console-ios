@@ -22,7 +22,6 @@ class DeviceViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.addSubview(refreshControl)
         
         bluetoohContext.addDeviceListener { (device) -> Void in
-           // println("got dev in view")
             if !contains(self.devices, device!) {
                 self.devices.append(device!)
                 self.tableView.reloadData()
@@ -33,33 +32,13 @@ class DeviceViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var device: Device = devices[indexPath.row]
         println("did click \(device.peripheral.identifier.UUIDString)")
-        device.connect({(error: NSError?) in
+        var blueBasicDevice = BlueBasicDevice(device: device)
+        blueBasicDevice.connect({(error: NSError?) in
             if (error == nil) {
-                println("did connect!!!")
-                connectedDevice = device
-               
-                device.getServices({(services: [CBService]) in
-                    
-                    var foundCommService = false
-                    for service in services {
-                       println("found service \(service.UUID.UUIDString)")
-                        if (service.UUID == UUIDs.commsService) {
-                            foundCommService = true
-                            connectedDevice = device
-                        }
-                    }
-                    if (foundCommService) {
-                        self.tabBarController?.selectedIndex = 1
-                    } else {
-                        println("this is not a BlueBasic device")
-                    }
-                })
-                
-            } else {
-                println("failed to connect!")
-            }
+                connectedDevice = blueBasicDevice
+                self.tabBarController?.selectedIndex = 1
+           }
         })
-        
     }
     
     func pullToRefresh(sender: UIRefreshControl) {
@@ -86,22 +65,6 @@ class DeviceViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
              cell.textLabel.text = devices[indexPath.row].peripheral.identifier.UUIDString
         }
-        device.getServices { (services) -> Void in
-            var found = false
-            for service in services {
-                if (service.UUID.UUIDString == UUIDs.commsService.UUIDString) {
-                    found = true
-                    break
-                    
-                }
-            }
-            if (!found) {
-                cell.textLabel.text = cell.textLabel.text! + " (not ours)"
-            }
-        }
-        
-        
-       // cell.imageView.sizeToFit()
         return cell
     }
 

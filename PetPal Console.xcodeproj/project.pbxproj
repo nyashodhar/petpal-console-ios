@@ -13,9 +13,9 @@
 		AF13BE411A13E1EC00605B21 /* library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE3F1A13E1EC00605B21 /* library@2x.png */; };
 		AF13BE681A1439D300605B21 /* KeyboardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE671A1439D300605B21 /* KeyboardControl.swift */; };
 		AF13BE6A1A146E4F00605B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE691A146E4F00605B21 /* Main.storyboard */; };
-		AF13BE6C1A14829600605B21 /* UUIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE6B1A14829600605B21 /* UUIDs.swift */; };
 		AF13BE751A14A0A100605B21 /* ConsoleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */; };
 		AF99D5B81A15D268001FA3FE /* PetPal-Console.png in Resources */ = {isa = PBXBuildFile; fileRef = AF99D5B71A15D268001FA3FE /* PetPal-Console.png */; };
+		AF99D5BA1A1B07FA001FA3FE /* BlueBasicDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99D5B91A1B07FA001FA3FE /* BlueBasicDevice.swift */; };
 		AFA7EF131A1322DA006DEC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7EF121A1322DA006DEC91 /* AppDelegate.swift */; };
 		AFA7EF1A1A1322DA006DEC91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA7EF191A1322DA006DEC91 /* Images.xcassets */; };
 		AFA7EF1D1A1322DA006DEC91 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFA7EF1B1A1322DA006DEC91 /* LaunchScreen.xib */; };
@@ -59,9 +59,9 @@
 		AF13BE3F1A13E1EC00605B21 /* library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "library@2x.png"; sourceTree = "<group>"; };
 		AF13BE671A1439D300605B21 /* KeyboardControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardControl.swift; sourceTree = "<group>"; };
 		AF13BE691A146E4F00605B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		AF13BE6B1A14829600605B21 /* UUIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUIDs.swift; sourceTree = "<group>"; };
 		AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleLabel.swift; sourceTree = "<group>"; };
 		AF99D5B71A15D268001FA3FE /* PetPal-Console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PetPal-Console.png"; sourceTree = "<group>"; };
+		AF99D5B91A1B07FA001FA3FE /* BlueBasicDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueBasicDevice.swift; sourceTree = "<group>"; };
 		AFA7EF0D1A1322DA006DEC91 /* PetPal Console.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PetPal Console.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA7EF111A1322DA006DEC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA7EF121A1322DA006DEC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,8 +131,8 @@
 				AFA7EF361A132812006DEC91 /* Device.swift */,
 				AFA7EF411A13499C006DEC91 /* ConsoleViewController.swift */,
 				AF13BE671A1439D300605B21 /* KeyboardControl.swift */,
-				AF13BE6B1A14829600605B21 /* UUIDs.swift */,
 				AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */,
+				AF99D5B91A1B07FA001FA3FE /* BlueBasicDevice.swift */,
 			);
 			path = "PetPal Console";
 			sourceTree = "<group>";
@@ -287,11 +287,11 @@
 				AFA7EF331A1323B9006DEC91 /* BluetoothContext.swift in Sources */,
 				AFA7EF3B1A132C0A006DEC91 /* DeviceViewController.swift in Sources */,
 				AF13BE751A14A0A100605B21 /* ConsoleLabel.swift in Sources */,
-				AF13BE6C1A14829600605B21 /* UUIDs.swift in Sources */,
 				AFA7EF131A1322DA006DEC91 /* AppDelegate.swift in Sources */,
 				AFA7EF421A13499C006DEC91 /* ConsoleViewController.swift in Sources */,
 				AF13BE681A1439D300605B21 /* KeyboardControl.swift in Sources */,
 				AFA7EF371A132812006DEC91 /* Device.swift in Sources */,
+				AF99D5BA1A1B07FA001FA3FE /* BlueBasicDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

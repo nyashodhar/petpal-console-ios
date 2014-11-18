@@ -40,7 +40,7 @@ class Device: NSObject, CBPeripheralDelegate {
     }
     
     func getCharacteristics(serviceUUID: CBUUID, callback: (characteristics: [CBCharacteristic]) -> Void) {
-       connectedDevice?.getServices({ (services) -> Void in
+       getServices({ (services) -> Void in
             for service: CBService in services {
                 if (service.UUID == serviceUUID) {
                     var listeners = self.characteristicsListeners[serviceUUID.UUIDString]
@@ -87,10 +87,7 @@ class Device: NSObject, CBPeripheralDelegate {
     
     
     func peripheral(peripheral: CBPeripheral!, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
-        println("updated value")
         if let listeners = readListeners[characteristic.UUID.UUIDString] {
-            println("updated value listener size=\(listeners.count)")
-
             var value = characteristic.value
             for listener in listeners {
                 listener!(data: value, error: error)
