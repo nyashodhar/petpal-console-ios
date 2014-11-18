@@ -17,6 +17,7 @@ class ConsoleViewController: UIViewController, UITextFieldDelegate {
     var keyboardControl: KeyboardControl!
     var gestureRecognizer: UITapGestureRecognizer!
     var outputCharacteristic: CBCharacteristic?
+    var previouslyConnectedDevice: Device?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +29,16 @@ class ConsoleViewController: UIViewController, UITextFieldDelegate {
         var gestureRecognizer = UITapGestureRecognizer(target:self, action: "tapped")
         mainScrollView.addGestureRecognizer(gestureRecognizer)
         inputTextField.becomeFirstResponder()
-       
-        //var inputCharacteristic = list[UUIDs.commsService]!.characteristics[UUIDS.inputCharacteristicUUID]
-        // todo: only if new device...
-        if (connectedDevice != nil && connectedDevice?.connected == true) {
+        
+    }
+    
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        keyboardControl.activate()
+ 
+        if (connectedDevice != nil && connectedDevice?.connected == true && connectedDevice != previouslyConnectedDevice) {
             println("got connected dev")
             connectedDevice?.getCharacteristics(UUIDs.commsService, callback: { (characteristics: [CBCharacteristic]) -> Void in
                 println("got chars")
@@ -41,37 +48,24 @@ class ConsoleViewController: UIViewController, UITextFieldDelegate {
                         println("got read characteristic")
                         connectedDevice?.peripheral.setNotifyValue(true, forCharacteristic: characteristic)
                         connectedDevice?.read(characteristic, readValue: { (data, error) -> Void in
-                           println("read data")
+                            println("read data")
                             if (data != nil) {
                                 
                                 var text = NSString(data: data!, encoding: NSUTF8StringEncoding)
                                 println("text=\(text!)")
                                 self.consoleLabel.addText(text!)
-
+                                
                             }
                         })
                     } else if (characteristic.UUID == UUIDs.outputCharacteristic) {
                         println("got outputCharacteristic")
                         self.outputCharacteristic = characteristic
+                        self.previouslyConnectedDevice = connectedDevice
+                        self.consoleLabel.text = ""
                     }
                 }
             })
-            
-            
-          
- 
-            
-            
         }
-        
-        
-    }
-    
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        keyboardControl.activate()
     }
     
     
