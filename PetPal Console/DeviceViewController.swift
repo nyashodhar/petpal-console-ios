@@ -55,7 +55,7 @@ class DeviceViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
                 })*/
                 
-                 self.performSegueWithIdentifier("show_console", sender: self)
+                self.tabBarController?.selectedIndex = 1
             } else {
                 println("failed to connect!")
             }

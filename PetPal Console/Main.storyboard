@@ -71,7 +71,6 @@
                     <tabBarItem key="tabBarItem" title="Devices" image="settings.png" id="fGZ-hN-ywK"/>
                     <connections>
                         <outlet property="tableView" destination="3Pn-Bm-cHB" id="xtN-5h-sRD"/>
-                        <segue destination="dPH-ma-OEj" kind="show" identifier="show_console" id="AG4-QP-d6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YY2-IM-CGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -149,7 +148,4 @@
         <image name="cli.png" width="24" height="24"/>
         <image name="settings.png" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="AG4-QP-d6k"/>
-    </inferredMetricsTieBreakers>
 </document>
