@@ -28,19 +28,23 @@ class BlueBasicDevice: NSObject {
     func connect(callback: (error: NSError?) -> Void) {
         self.device.connect({(error: NSError?) in
             if (error == nil) {
-                self.device.getCharacteristics(self.commsServiceCBUUID, callback: { (characteristics: [CBCharacteristic]) -> Void in
-                    for characteristic: CBCharacteristic in characteristics {
-                        if (characteristic.UUID == self.readCharacteristicCBUUID) {
-                            self.readCharacteristic = characteristic
-                        } else if (characteristic.UUID == self.writeCharacteristicCBUUID) {
-                            self.writeCharacteristic = characteristic
+                self.device.getCharacteristics(self.commsServiceCBUUID, callback: { (characteristics: [CBCharacteristic]?, error: NSError?) -> Void in
+                    if (error == nil) {
+                        for characteristic: CBCharacteristic in characteristics! {
+                            if (characteristic.UUID == self.readCharacteristicCBUUID) {
+                                self.readCharacteristic = characteristic
+                            } else if (characteristic.UUID == self.writeCharacteristicCBUUID) {
+                                self.writeCharacteristic = characteristic
+                            }
                         }
-                    }
-                    if (self.writeCharacteristic == nil || self.readCharacteristic == nil) {
-                        callback(error: NSError(domain: "BlueBasicDevice", code: -1, userInfo: nil))
-                        
+                        if (self.writeCharacteristic == nil || self.readCharacteristic == nil) {
+                            callback(error: NSError(domain: "BlueBasicDevice", code: -1, userInfo: nil))
+                            
+                        } else {
+                            callback(error: nil)
+                        }
                     } else {
-                        callback(error: nil)
+                        callback(error: error)
                     }
                 })
                 
@@ -63,6 +67,6 @@ class BlueBasicDevice: NSObject {
     }
     
     func write(data: NSData) {
-      self.device.write(data, forCharacteristic: writeCharacteristic!, type: .WithResponse)
+        self.device.write(data, forCharacteristic: writeCharacteristic!, type: .WithResponse)
     }
 }

@@ -31,13 +31,17 @@ class DeviceViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var device: Device = devices[indexPath.row]
-        println("did click \(device.peripheral.identifier.UUIDString)")
         var blueBasicDevice = BlueBasicDevice(device: device)
         blueBasicDevice.connect({(error: NSError?) in
             if (error == nil) {
                 connectedDevice = blueBasicDevice
                 self.tabBarController?.selectedIndex = 1
-           }
+            } else {
+                var alert = UIAlertController(title: "", message: "Unable to connect to device", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+
+            }
         })
     }
     

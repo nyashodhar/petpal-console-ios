@@ -15,7 +15,7 @@ class Device: NSObject, CBPeripheralDelegate {
     var connectedListeners = Array<((error: NSError?) -> Void)?>()
     var readListeners = [String: Array<((data: NSData?, error: NSError?) -> Void)?>]()
     var serviceListeners = Array<((services: [CBService]) -> Void)?>()
-    var characteristicsListeners = [String: Array<((characteristics: [CBCharacteristic]) -> Void)?>]()
+    var characteristicsListeners = [String: Array<((characteristics: [CBCharacteristic], error: NSError?) -> Void)?>]()
     var connected: Bool = false
     var centralManager: CBCentralManager
     
@@ -26,7 +26,7 @@ class Device: NSObject, CBPeripheralDelegate {
         peripheral.delegate = self
         connected = true // todo:
     }
-
+    
     func connect(connected: (error: NSError?) -> Void) {
         //check if connected
         connectedListeners.append(connected)
@@ -34,18 +34,20 @@ class Device: NSObject, CBPeripheralDelegate {
     }
     
     func getServices(callback: (services: [CBService]) -> Void) {
-      // todo: check cache
+        // todo: check cache
         serviceListeners.append(callback)
         peripheral.discoverServices(nil) // todo: should check for spesific service....
     }
     
-    func getCharacteristics(serviceUUID: CBUUID, callback: (characteristics: [CBCharacteristic]) -> Void) {
-       getServices({ (services) -> Void in
+    func getCharacteristics(serviceUUID: CBUUID, callback: (characteristics: [CBCharacteristic]?, error: NSError?) -> Void) {
+        getServices({ (services) -> Void in
+            var foundService = false
             for service: CBService in services {
                 if (service.UUID == serviceUUID) {
+                    foundService = true
                     var listeners = self.characteristicsListeners[serviceUUID.UUIDString]
                     if (listeners == nil) {
-                        listeners = Array<((characteristics: [CBCharacteristic]) -> Void)?>()
+                        listeners = Array<((characteristics: [CBCharacteristic], error: NSError?) -> Void)?>()
                         listeners?.append(callback)
                         self.characteristicsListeners[serviceUUID.UUIDString] = listeners
                     } else {
@@ -54,9 +56,12 @@ class Device: NSObject, CBPeripheralDelegate {
                     self.peripheral.discoverCharacteristics(nil, forService:service)
                 }
             }
+            if !(foundService) {
+                callback(characteristics: nil, error: NSError(domain: "Device", code: -1, userInfo: nil))
+            }
             
         })
-    
+        
     }
     
     func write(data: NSData, forCharacteristic: CBCharacteristic, type: CBCharacteristicWriteType) {
@@ -72,7 +77,7 @@ class Device: NSObject, CBPeripheralDelegate {
             readListeners[characteristic.UUID.UUIDString] = listeners
         }
         readListeners[characteristic.UUID.UUIDString]?.append(readValue)
- 
+        
         peripheral.readValueForCharacteristic(characteristic)
     }
     
@@ -94,20 +99,12 @@ class Device: NSObject, CBPeripheralDelegate {
             }
             
         }
-        
-        // read again???
-        
     }
-  
+    
     func peripheral(peripheral: CBPeripheral!, didDiscoverCharacteristicsForService service: CBService!, error: NSError!) {
-        if (error != nil) {
-            println("error discoverCharacteristicsForService services (maybe...)");
-            //   [self cleanup];
-            return;
-        }
         if let listeners = characteristicsListeners[service.UUID.UUIDString] {
             for listener in listeners {
-                listener!(characteristics: service.characteristics as [CBCharacteristic])
+                listener!(characteristics: service.characteristics as [CBCharacteristic], error: error)
             }
         }
     }
