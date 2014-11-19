@@ -23,20 +23,26 @@ class ConsoleViewController: UIViewController, UITextFieldDelegate {
         keyboardControl = KeyboardControl(scrollView: mainScrollView, textFields: [inputTextField])
         inputTextField.delegate = self
         
-        self.automaticallyAdjustsScrollViewInsets = false
-        
         var gestureRecognizer = UITapGestureRecognizer(target:self, action: "tapped")
         mainScrollView.addGestureRecognizer(gestureRecognizer)
         inputTextField.becomeFirstResponder()
-        
+      
     }
     
+    override func viewWillLayoutSubviews() {
+        mainScrollView.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
+  
+        consoleLabel.frame = CGRectMake(0, 0, view.frame.width,   view.frame.height - inputTextField.frame.height )
+        inputTextField.frame = CGRectMake(0, consoleLabel.frame.height, view.frame.width, inputTextField.frame.height )
+    
+    }
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
         keyboardControl.activate()
- 
+        
         if (connectedDevice != nil && connectedDevice?.isConnected() == true && connectedDevice != previouslyConnectedDevice) {
             println("got connected dev")
             self.previouslyConnectedDevice = connectedDevice
