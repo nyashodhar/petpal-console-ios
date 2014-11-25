@@ -27,6 +27,9 @@
 		AFA7EF3F1A1347CB006DEC91 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA7EF3D1A1347CB006DEC91 /* settings.png */; };
 		AFA7EF401A1347CB006DEC91 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA7EF3E1A1347CB006DEC91 /* settings@2x.png */; };
 		AFA7EF421A13499C006DEC91 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7EF411A13499C006DEC91 /* ConsoleViewController.swift */; };
+		AFD9EC291A2445E5005FDE7B /* ScriptListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9EC281A2445E5005FDE7B /* ScriptListViewController.swift */; };
+		AFD9EC2C1A2446E0005FDE7B /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9EC2B1A2446E0005FDE7B /* Script.swift */; };
+		AFD9EC2E1A244BA3005FDE7B /* ScriptEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9EC2D1A244BA3005FDE7B /* ScriptEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		AFA7EF3D1A1347CB006DEC91 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		AFA7EF3E1A1347CB006DEC91 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		AFA7EF411A13499C006DEC91 /* ConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
+		AFD9EC281A2445E5005FDE7B /* ScriptListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptListViewController.swift; sourceTree = "<group>"; };
+		AFD9EC2B1A2446E0005FDE7B /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
+		AFD9EC2D1A244BA3005FDE7B /* ScriptEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 		AFA7EF0F1A1322DA006DEC91 /* PetPal Console */ = {
 			isa = PBXGroup;
 			children = (
+				AFD9EC2A1A24467E005FDE7B /* scripts */,
 				AF13BE691A146E4F00605B21 /* Main.storyboard */,
 				AFA7EF3C1A134776006DEC91 /* Images */,
 				AFA7EF121A1322DA006DEC91 /* AppDelegate.swift */,
@@ -133,6 +140,9 @@
 				AF13BE671A1439D300605B21 /* KeyboardControl.swift */,
 				AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */,
 				AF99D5B91A1B07FA001FA3FE /* BlueBasicDevice.swift */,
+				AFD9EC281A2445E5005FDE7B /* ScriptListViewController.swift */,
+				AFD9EC2B1A2446E0005FDE7B /* Script.swift */,
+				AFD9EC2D1A244BA3005FDE7B /* ScriptEditViewController.swift */,
 			);
 			path = "PetPal Console";
 			sourceTree = "<group>";
@@ -174,6 +184,13 @@
 				AFA7EF3E1A1347CB006DEC91 /* settings@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		AFD9EC2A1A24467E005FDE7B /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,11 +303,14 @@
 			files = (
 				AFA7EF331A1323B9006DEC91 /* BluetoothContext.swift in Sources */,
 				AFA7EF3B1A132C0A006DEC91 /* DeviceViewController.swift in Sources */,
+				AFD9EC291A2445E5005FDE7B /* ScriptListViewController.swift in Sources */,
 				AF13BE751A14A0A100605B21 /* ConsoleLabel.swift in Sources */,
 				AFA7EF131A1322DA006DEC91 /* AppDelegate.swift in Sources */,
 				AFA7EF421A13499C006DEC91 /* ConsoleViewController.swift in Sources */,
 				AF13BE681A1439D300605B21 /* KeyboardControl.swift in Sources */,
 				AFA7EF371A132812006DEC91 /* Device.swift in Sources */,
+				AFD9EC2C1A2446E0005FDE7B /* Script.swift in Sources */,
+				AFD9EC2E1A244BA3005FDE7B /* ScriptEditViewController.swift in Sources */,
 				AF99D5BA1A1B07FA001FA3FE /* BlueBasicDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
