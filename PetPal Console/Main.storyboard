@@ -144,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="1094" y="408"/>
         </scene>
-        <!--Item-->
+        <!--Scripts-->
         <scene sceneID="Axd-UD-l4x">
             <objects>
                 <viewController id="TuV-kN-LfK" customClass="ScriptListViewController" customModule="PetPal_Console" customModuleProvider="target" sceneMemberID="viewController">
@@ -189,7 +189,7 @@
                             <constraint firstItem="AFY-pP-QXn" firstAttribute="top" secondItem="Lgt-Fr-I8C" secondAttribute="bottom" constant="8" symbolic="YES" id="u2e-kq-dwO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="muc-PL-nR9"/>
+                    <tabBarItem key="tabBarItem" title="Scripts" image="library.png" id="muc-PL-nR9"/>
                     <connections>
                         <outlet property="tableView" destination="AFY-pP-QXn" id="S4q-OS-2Ks"/>
                         <segue destination="DdI-44-5Hp" kind="show" identifier="edit" id="fB8-16-puB"/>
@@ -285,6 +285,7 @@
     </scenes>
     <resources>
         <image name="cli.png" width="24" height="24"/>
+        <image name="library.png" width="24" height="24"/>
         <image name="settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>

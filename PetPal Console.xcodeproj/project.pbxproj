@@ -14,6 +14,8 @@
 		AF13BE681A1439D300605B21 /* KeyboardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE671A1439D300605B21 /* KeyboardControl.swift */; };
 		AF13BE6A1A146E4F00605B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE691A146E4F00605B21 /* Main.storyboard */; };
 		AF13BE751A14A0A100605B21 /* ConsoleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */; };
+		AF676C1A1A246D210018227F /* scripts.png in Resources */ = {isa = PBXBuildFile; fileRef = AF676C191A246D210018227F /* scripts.png */; };
+		AF676C1C1A246D490018227F /* scripts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF676C1B1A246D490018227F /* scripts@2x.png */; };
 		AF99D5B81A15D268001FA3FE /* PetPal-Console.png in Resources */ = {isa = PBXBuildFile; fileRef = AF99D5B71A15D268001FA3FE /* PetPal-Console.png */; };
 		AF99D5BA1A1B07FA001FA3FE /* BlueBasicDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99D5B91A1B07FA001FA3FE /* BlueBasicDevice.swift */; };
 		AFA7EF131A1322DA006DEC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7EF121A1322DA006DEC91 /* AppDelegate.swift */; };
@@ -63,6 +65,8 @@
 		AF13BE671A1439D300605B21 /* KeyboardControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardControl.swift; sourceTree = "<group>"; };
 		AF13BE691A146E4F00605B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleLabel.swift; sourceTree = "<group>"; };
+		AF676C191A246D210018227F /* scripts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scripts.png; sourceTree = "<group>"; };
+		AF676C1B1A246D490018227F /* scripts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scripts@2x.png"; sourceTree = "<group>"; };
 		AF99D5B71A15D268001FA3FE /* PetPal-Console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PetPal-Console.png"; sourceTree = "<group>"; };
 		AF99D5B91A1B07FA001FA3FE /* BlueBasicDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueBasicDevice.swift; sourceTree = "<group>"; };
 		AFA7EF0D1A1322DA006DEC91 /* PetPal Console.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PetPal Console.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +130,6 @@
 		AFA7EF0F1A1322DA006DEC91 /* PetPal Console */ = {
 			isa = PBXGroup;
 			children = (
-				AFD9EC2A1A24467E005FDE7B /* scripts */,
 				AF13BE691A146E4F00605B21 /* Main.storyboard */,
 				AFA7EF3C1A134776006DEC91 /* Images */,
 				AFA7EF121A1322DA006DEC91 /* AppDelegate.swift */,
@@ -175,6 +178,8 @@
 		AFA7EF3C1A134776006DEC91 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF676C1B1A246D490018227F /* scripts@2x.png */,
+				AF676C191A246D210018227F /* scripts.png */,
 				AF99D5B71A15D268001FA3FE /* PetPal-Console.png */,
 				AF13BE3E1A13E1EC00605B21 /* library.png */,
 				AF13BE3F1A13E1EC00605B21 /* library@2x.png */,
@@ -184,13 +189,6 @@
 				AFA7EF3E1A1347CB006DEC91 /* settings@2x.png */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		AFD9EC2A1A24467E005FDE7B /* scripts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,12 +272,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF676C1A1A246D210018227F /* scripts.png in Resources */,
 				AF13BE3C1A13538A00605B21 /* cli.png in Resources */,
 				AFA7EF401A1347CB006DEC91 /* settings@2x.png in Resources */,
 				AFA7EF3F1A1347CB006DEC91 /* settings.png in Resources */,
 				AF13BE401A13E1EC00605B21 /* library.png in Resources */,
 				AFA7EF1D1A1322DA006DEC91 /* LaunchScreen.xib in Resources */,
 				AF13BE3D1A13538A00605B21 /* cli@2x.png in Resources */,
+				AF676C1C1A246D490018227F /* scripts@2x.png in Resources */,
 				AF13BE6A1A146E4F00605B21 /* Main.storyboard in Resources */,
 				AFA7EF1A1A1322DA006DEC91 /* Images.xcassets in Resources */,
 				AF99D5B81A15D268001FA3FE /* PetPal-Console.png in Resources */,

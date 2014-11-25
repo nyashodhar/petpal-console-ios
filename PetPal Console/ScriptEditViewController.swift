@@ -25,9 +25,35 @@ class ScriptEditViewController: UIViewController {
     }
     
     @IBAction func backClicked(sender: UIButton) {
-    //    script?.body = bodyTextView.text
-    //    script?.title = titleTextField.text
+        var title  = titleTextField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        if (title == "") {
+            // todo: we shold allow the title to be empty...
+            var alert = UIAlertController(title: "", message: "Please enter a title", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
+        let fileManager = NSFileManager.defaultManager()
+
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        let newFile = documentsPath.stringByAppendingPathComponent(title + ".basic");
+        // don't overwrite another file with the same title
+        if (title != script?.title && fileManager.fileExistsAtPath(newFile)) {
+            var alert = UIAlertController(title: "", message: "Script already exists", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        bodyTextView.text.writeToFile(newFile, atomically: false, encoding: NSUTF8StringEncoding, error: nil);
+        // file was renamed
+        if (title != script?.title) {
+            var oldFile = documentsPath.stringByAppendingPathComponent(script!.title + ".basic")
+            fileManager.removeItemAtPath(oldFile, error: nil)
+        }
         self.performSegueWithIdentifier("list", sender: self)
+        
+        
 
     }
     

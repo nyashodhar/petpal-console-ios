@@ -18,13 +18,21 @@ class ScriptListViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-       
-        if (scripts.isEmpty) {
+        
+        let fileManager = NSFileManager.defaultManager()
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        let enumerator:NSDirectoryEnumerator = fileManager.enumeratorAtPath(documentsPath)!
+        while let fileName = enumerator.nextObject() as? String {
+            var path = documentsPath.stringByAppendingPathComponent(fileName)
+            let body = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
+            
             var script = Script()
-            script.title = "Hello world"
-            script.body = "10 PRINT \"Hello world\""
+            script.title = fileName.stringByDeletingPathExtension
+            script.body = body!
             scripts.append(script)
-            println("creating script")
+          //  fileManager.removeItemAtPath(documentsPath.stringByAppendingPathComponent(fileName), error: nil)
+      
+
         }
     }
     
