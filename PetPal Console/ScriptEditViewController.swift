@@ -22,9 +22,27 @@ class ScriptEditViewController: UIViewController {
     }
     
     @IBAction func runClicked(sender: UIButton) {
+        if (connectedDevice == nil || !connectedDevice!.isConnected()) {
+            var alert = UIAlertController(title: "", message: "No connected device", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+            
+        }
+        
+        save()
+        connectedDevice?.write((bodyTextView.text + "\n").dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)!)
+        self.performSegueWithIdentifier("run", sender: self)
+        
+        
     }
     
     @IBAction func backClicked(sender: UIButton) {
+        self.save()
+        self.performSegueWithIdentifier("list", sender: self)
+    }
+    
+    func save() {
         var title  = titleTextField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         if (title == "") {
             // todo: we shold allow the title to be empty...
@@ -35,7 +53,7 @@ class ScriptEditViewController: UIViewController {
         }
         
         let fileManager = NSFileManager.defaultManager()
-
+        
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
         let newFile = documentsPath.stringByAppendingPathComponent(title + ".basic");
         // don't overwrite another file with the same title
@@ -51,10 +69,7 @@ class ScriptEditViewController: UIViewController {
             var oldFile = documentsPath.stringByAppendingPathComponent(script!.title + ".basic")
             fileManager.removeItemAtPath(oldFile, error: nil)
         }
-        self.performSegueWithIdentifier("list", sender: self)
-        
-        
-
+ 
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -63,7 +78,6 @@ class ScriptEditViewController: UIViewController {
                 tabBarController.selectedIndex = 2
             } else if (segue.identifier == "run") {
                 tabBarController.selectedIndex = 1
-
             }
         }
     }
