@@ -96,7 +96,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bA-Nc-GAE">
                                         <rect key="frame" x="0.0" y="445" width="600" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="0.050980392159999999" green="0.43529411759999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.13725490868091583" green="0.72156864404678345" blue="0.96078437566757202" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
@@ -107,7 +107,7 @@
                                             <constraint firstAttribute="height" constant="437" id="hjB-K0-Ulv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.050980392156862744" green="0.43529411764705883" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.13725490870000001" green="0.72156864399999998" blue="0.96078437569999997" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
