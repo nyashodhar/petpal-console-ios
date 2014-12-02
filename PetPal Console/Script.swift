@@ -11,6 +11,7 @@ import Foundation
 class Script: NSObject, NSCoding {
     var title: String = ""
     var body: String = ""
+    var fileName: String = ""
 
     override init () {
         super.init()

@@ -20,7 +20,7 @@ class ScriptListViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         
         let fileManager = NSFileManager.defaultManager()
-    let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
         let enumerator:NSDirectoryEnumerator = fileManager.enumeratorAtPath(documentsPath)!
         while let fileName = enumerator.nextObject() as? String {
             var path = documentsPath.stringByAppendingPathComponent(fileName)
@@ -29,10 +29,8 @@ class ScriptListViewController: UIViewController, UITableViewDelegate, UITableVi
             var script = Script()
             script.title = fileName.stringByDeletingPathExtension
             script.body = body!
+            script.fileName = fileName
             scripts.append(script)
-          //  fileManager.removeItemAtPath(documentsPath.stringByAppendingPathComponent(fileName), error: nil)
-      
-
         }
     }
     
@@ -64,6 +62,21 @@ class ScriptListViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cell
         
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        if (editingStyle == UITableViewCellEditingStyle.Delete ) {
+            var fileName = scripts[indexPath.row].fileName
+            let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+            let fileManager = NSFileManager.defaultManager()
+            fileManager.removeItemAtPath(documentsPath.stringByAppendingPathComponent(fileName), error: nil)
+            scripts.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
