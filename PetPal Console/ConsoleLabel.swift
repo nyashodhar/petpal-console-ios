@@ -23,7 +23,6 @@ class ConsoleLabel: UILabel {
             textHeight = self.font.lineHeight * CGFloat(lineArray.count - linesToRemove)
         }
         
-        println("lines=\(lineArray.count) y= \(rect.origin.y) x=\(rect.origin.x) w=\(rect.size.width) h=\(rect.size.height)")
         var y = (rect.size.height - textHeight)/2
         super.drawTextInRect(CGRectMake(0, y, rect.size.width, rect.size.height))
         
