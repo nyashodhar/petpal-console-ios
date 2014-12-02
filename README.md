@@ -1,4 +1,4 @@
 petpal-console-ios
 ==================
 
-Petpal console for Hacker week.
+Petpal console for maker faire.
