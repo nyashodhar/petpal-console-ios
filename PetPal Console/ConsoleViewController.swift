@@ -25,7 +25,7 @@ class ConsoleViewController: UIViewController, UITextFieldDelegate {
         
         var gestureRecognizer = UITapGestureRecognizer(target:self, action: "tapped")
         mainScrollView.addGestureRecognizer(gestureRecognizer)
-        inputTextField.becomeFirstResponder()
+      //  inputTextField.becomeFirstResponder()
       
     }
     
