@@ -65,9 +65,9 @@ class DeviceViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let device = devices[indexPath.row]
         let name = device.peripheral.name
         if (name != nil)  {
-            cell.textLabel.text = name
+            cell.textLabel?.text = name
         } else {
-             cell.textLabel.text = devices[indexPath.row].peripheral.identifier.UUIDString
+             cell.textLabel?.text = devices[indexPath.row].peripheral.identifier.UUIDString
         }
         return cell
     }
