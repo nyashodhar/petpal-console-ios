@@ -32,6 +32,8 @@
 		AFD9EC291A2445E5005FDE7B /* ScriptListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9EC281A2445E5005FDE7B /* ScriptListViewController.swift */; };
 		AFD9EC2C1A2446E0005FDE7B /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9EC2B1A2446E0005FDE7B /* Script.swift */; };
 		AFD9EC2E1A244BA3005FDE7B /* ScriptEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9EC2D1A244BA3005FDE7B /* ScriptEditViewController.swift */; };
+		AFF415FF1A4008CB00BD3484 /* Flash.basic in Resources */ = {isa = PBXBuildFile; fileRef = AFF415FE1A4008CB00BD3484 /* Flash.basic */; };
+		AFF416011A40090D00BD3484 /* Tri-Color.basic in Resources */ = {isa = PBXBuildFile; fileRef = AFF416001A40090D00BD3484 /* Tri-Color.basic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		AFD9EC281A2445E5005FDE7B /* ScriptListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptListViewController.swift; sourceTree = "<group>"; };
 		AFD9EC2B1A2446E0005FDE7B /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
 		AFD9EC2D1A244BA3005FDE7B /* ScriptEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptEditViewController.swift; sourceTree = "<group>"; };
+		AFF415FE1A4008CB00BD3484 /* Flash.basic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Flash.basic; sourceTree = "<group>"; };
+		AFF416001A40090D00BD3484 /* Tri-Color.basic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Tri-Color.basic"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +115,8 @@
 		AFA7EF041A1322DA006DEC91 = {
 			isa = PBXGroup;
 			children = (
-				AFA7EF341A132708006DEC91 /* CoreBluetooth.framework */,
 				AFA7EF0F1A1322DA006DEC91 /* PetPal Console */,
+				AFA7EF341A132708006DEC91 /* CoreBluetooth.framework */,
 				AFA7EF251A1322DA006DEC91 /* PetPal ConsoleTests */,
 				AFA7EF0E1A1322DA006DEC91 /* Products */,
 			);
@@ -130,6 +134,7 @@
 		AFA7EF0F1A1322DA006DEC91 /* PetPal Console */ = {
 			isa = PBXGroup;
 			children = (
+				AFF415FA1A3FF79600BD3484 /* Examples */,
 				AF13BE691A146E4F00605B21 /* Main.storyboard */,
 				AFA7EF3C1A134776006DEC91 /* Images */,
 				AFA7EF121A1322DA006DEC91 /* AppDelegate.swift */,
@@ -189,6 +194,15 @@
 				AFA7EF3E1A1347CB006DEC91 /* settings@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		AFF415FA1A3FF79600BD3484 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				AFF415FE1A4008CB00BD3484 /* Flash.basic */,
+				AFF416001A40090D00BD3484 /* Tri-Color.basic */,
+			);
+			name = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +288,11 @@
 			files = (
 				AF676C1A1A246D210018227F /* scripts.png in Resources */,
 				AF13BE3C1A13538A00605B21 /* cli.png in Resources */,
+				AFF415FF1A4008CB00BD3484 /* Flash.basic in Resources */,
 				AFA7EF401A1347CB006DEC91 /* settings@2x.png in Resources */,
 				AFA7EF3F1A1347CB006DEC91 /* settings.png in Resources */,
 				AF13BE401A13E1EC00605B21 /* library.png in Resources */,
+				AFF416011A40090D00BD3484 /* Tri-Color.basic in Resources */,
 				AFA7EF1D1A1322DA006DEC91 /* LaunchScreen.xib in Resources */,
 				AF13BE3D1A13538A00605B21 /* cli@2x.png in Resources */,
 				AF676C1C1A246D490018227F /* scripts@2x.png in Resources */,
