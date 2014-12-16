@@ -9,82 +9,123 @@
 import UIKit
 import CoreBluetooth
 
-class ConsoleViewController: UIViewController, UITextFieldDelegate {
+class ConsoleViewController: UIViewController, UITextViewDelegate {
     
-    @IBOutlet weak var consoleLabel: ConsoleLabel!
-    @IBOutlet weak var inputTextField: UITextField!
-    @IBOutlet weak var mainScrollView: UIScrollView!
-    var keyboardControl: KeyboardControl!
+    @IBOutlet weak var mainTextView: UITextView!
+
     var gestureRecognizer: UITapGestureRecognizer!
     var previouslyConnectedDevice: BlueBasicDevice?
-    
+    var outboundBuffer = ""
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        keyboardControl = KeyboardControl(scrollView: mainScrollView, textFields: [inputTextField])
-        inputTextField.delegate = self
         
+        mainTextView.delegate = self
+        mainTextView.dataDetectorTypes = .None
+        mainTextView.layoutManager.allowsNonContiguousLayout = false
+        mainTextView.becomeFirstResponder()
+
         var gestureRecognizer = UITapGestureRecognizer(target:self, action: "tapped")
-        mainScrollView.addGestureRecognizer(gestureRecognizer)
-      //  inputTextField.becomeFirstResponder()
-      
+        mainTextView.addGestureRecognizer(gestureRecognizer)
     }
-    
-    override func viewWillLayoutSubviews() {
-        mainScrollView.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
-  
-        consoleLabel.frame = CGRectMake(0, 0, view.frame.width,   view.frame.height - inputTextField.frame.height )
-        inputTextField.frame = CGRectMake(0, consoleLabel.frame.height, view.frame.width, inputTextField.frame.height )
-    
-    }
-    
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
-        keyboardControl.activate()
-        
         if (connectedDevice != nil && connectedDevice?.isConnected() == true && connectedDevice != previouslyConnectedDevice) {
             println("got connected dev")
             self.previouslyConnectedDevice = connectedDevice
-            self.consoleLabel.text = ""
+            self.mainTextView.text = ""
             
             connectedDevice?.read({(data: NSData) -> Void in
                 var text = NSString(data: data, encoding: NSUTF8StringEncoding)
-                self.consoleLabel.addText(text!)
+                self.appendText(text!)
             })
         }
+    
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: "UIKeyboardDidShowNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: "UIKeyboardDidHideNotification", object: nil)
+
     }
     
     
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        keyboardControl.deavtivate()
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "UIKeyboardDidShowNotification", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "UIKeyboardDidHideNotification", object: nil)
     }
     
     func tapped () {
-        if !(inputTextField.isFirstResponder()) {
-            inputTextField.becomeFirstResponder()
+        if !(mainTextView.isFirstResponder()) {
+            mainTextView.becomeFirstResponder()
         } else {
-            inputTextField.resignFirstResponder()
+            mainTextView.resignFirstResponder()
         }
         
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate m
-        if (connectedDevice != nil && connectedDevice?.isConnected() == true) {
-            var text = inputTextField.text
-            inputTextField.text = ""
-            consoleLabel.addText(text + "\n")
-            connectedDevice?.write((text + "\n").dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)!)
-        } else {
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
+        if (connectedDevice == nil || connectedDevice?.isConnected() == false){
             var alert = UIAlertController(title: "", message: "No connected device", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+            return false
         }
-        return true
+        
+        if text.utf16Count > 0 {
+            writeToBuffer(text)
+            if range.location == mainTextView.text.utf16Count {
+                return true
+            } else {
+                mainTextView.selectedRange = NSMakeRange(mainTextView.text!.utf16Count, 0)
+                mainTextView.insertText(text)
+                mainTextView.scrollRangeToVisible(NSMakeRange(mainTextView.text.utf16Count, 0))
+                return false
+            }
+        }
+        
+        if range.location == mainTextView.text.utf16Count - 1 && outboundBuffer.utf16Count > 0 {
+            outboundBuffer.removeAtIndex(outboundBuffer.endIndex.predecessor())
+            return true
+        } else {
+            return false
+        }
+
     }
     
+    func writeToBuffer(_ str: String = "\n") {
+        for ch in str {
+            outboundBuffer.append(ch)
+            if ch == "\n" || outboundBuffer.utf16Count > 64 {
+                connectedDevice?.write(outboundBuffer.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)!)
+                outboundBuffer = ""
+            }
+        }
+    }
+
+    func keyboardDidShow(notification: NSNotification) {
+        let info : NSDictionary = notification.userInfo!
+        let keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue().size
+        let insets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, keyboardSize!.height, 0)
+        self.mainTextView.contentInset = insets
+        self.mainTextView.scrollIndicatorInsets = insets
+    }
+    
+    func keyboardDidHide(notification: NSNotification) {
+        let  contentInsets: UIEdgeInsets = UIEdgeInsetsZero;
+        self.mainTextView.contentInset = contentInsets;
+        self.mainTextView.scrollIndicatorInsets = contentInsets;
+    }
+    
+    func appendText(text: String) {
+        mainTextView.selectedRange = NSMakeRange(mainTextView.text!.utf16Count, 0)
+        mainTextView.insertText(text)
+        mainTextView.scrollRangeToVisible(NSMakeRange(mainTextView.text!.utf16Count, 0))
+    }
+    
+
     
     
 }

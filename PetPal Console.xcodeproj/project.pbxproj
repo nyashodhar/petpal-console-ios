@@ -11,9 +11,7 @@
 		AF13BE3D1A13538A00605B21 /* cli@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE3B1A13538A00605B21 /* cli@2x.png */; };
 		AF13BE401A13E1EC00605B21 /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE3E1A13E1EC00605B21 /* library.png */; };
 		AF13BE411A13E1EC00605B21 /* library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE3F1A13E1EC00605B21 /* library@2x.png */; };
-		AF13BE681A1439D300605B21 /* KeyboardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE671A1439D300605B21 /* KeyboardControl.swift */; };
 		AF13BE6A1A146E4F00605B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF13BE691A146E4F00605B21 /* Main.storyboard */; };
-		AF13BE751A14A0A100605B21 /* ConsoleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */; };
 		AF676C1A1A246D210018227F /* scripts.png in Resources */ = {isa = PBXBuildFile; fileRef = AF676C191A246D210018227F /* scripts.png */; };
 		AF676C1C1A246D490018227F /* scripts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF676C1B1A246D490018227F /* scripts@2x.png */; };
 		AF99D5B81A15D268001FA3FE /* PetPal-Console.png in Resources */ = {isa = PBXBuildFile; fileRef = AF99D5B71A15D268001FA3FE /* PetPal-Console.png */; };
@@ -64,9 +62,7 @@
 		AF13BE3B1A13538A00605B21 /* cli@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cli@2x.png"; sourceTree = "<group>"; };
 		AF13BE3E1A13E1EC00605B21 /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library.png; sourceTree = "<group>"; };
 		AF13BE3F1A13E1EC00605B21 /* library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "library@2x.png"; sourceTree = "<group>"; };
-		AF13BE671A1439D300605B21 /* KeyboardControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardControl.swift; sourceTree = "<group>"; };
 		AF13BE691A146E4F00605B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleLabel.swift; sourceTree = "<group>"; };
 		AF676C191A246D210018227F /* scripts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scripts.png; sourceTree = "<group>"; };
 		AF676C1B1A246D490018227F /* scripts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scripts@2x.png"; sourceTree = "<group>"; };
 		AF99D5B71A15D268001FA3FE /* PetPal-Console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PetPal-Console.png"; sourceTree = "<group>"; };
@@ -145,8 +141,6 @@
 				AFA7EF321A1323B9006DEC91 /* BluetoothContext.swift */,
 				AFA7EF361A132812006DEC91 /* Device.swift */,
 				AFA7EF411A13499C006DEC91 /* ConsoleViewController.swift */,
-				AF13BE671A1439D300605B21 /* KeyboardControl.swift */,
-				AF13BE741A14A0A100605B21 /* ConsoleLabel.swift */,
 				AF99D5B91A1B07FA001FA3FE /* BlueBasicDevice.swift */,
 				AFD9EC281A2445E5005FDE7B /* ScriptListViewController.swift */,
 				AFD9EC2B1A2446E0005FDE7B /* Script.swift */,
@@ -320,10 +314,8 @@
 				AFA7EF331A1323B9006DEC91 /* BluetoothContext.swift in Sources */,
 				AFA7EF3B1A132C0A006DEC91 /* DeviceViewController.swift in Sources */,
 				AFD9EC291A2445E5005FDE7B /* ScriptListViewController.swift in Sources */,
-				AF13BE751A14A0A100605B21 /* ConsoleLabel.swift in Sources */,
 				AFA7EF131A1322DA006DEC91 /* AppDelegate.swift in Sources */,
 				AFA7EF421A13499C006DEC91 /* ConsoleViewController.swift in Sources */,
-				AF13BE681A1439D300605B21 /* KeyboardControl.swift in Sources */,
 				AFA7EF371A132812006DEC91 /* Device.swift in Sources */,
 				AFD9EC2C1A2446E0005FDE7B /* Script.swift in Sources */,
 				AFD9EC2E1A244BA3005FDE7B /* ScriptEditViewController.swift in Sources */,
